@@ -16,10 +16,11 @@ var express          = require("express"),
 var commentRoutes    = require("./routes/comments"),
 	campgroundRoutes = require("./routes/campgrounds"),
 	indexRoutes      = require("./routes/index");
-
-mongoose.connect("mongodb://localhost:27017/yelp_camp_v11", {
+//mongoose.connect("mongodb://localhost:27017/yelp_camp_v11"
+mongoose.connect("mongodb://sabri:Gtx1060ti@cluster0-its4a.mongodb.net/test?retryWrites=true&w=majority", {
 	useUnifiedTopology: true,
 	useNewUrlParser: true});
+ 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
