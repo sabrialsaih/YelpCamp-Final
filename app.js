@@ -52,6 +52,15 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://sabri:Gtx1060ti@cluster0-its4a.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+	const collection = client.db("test").collection("devices");
+	// perform actions on the collection object
+	client.close();
+});
+
 
 app.listen(process.env.PORT, process.env.IP, function () {
 	console.log("Server has started...");
