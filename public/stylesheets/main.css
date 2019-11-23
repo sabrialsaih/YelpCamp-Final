@@ -1,0 +1,30 @@
+#delete-form {
+    display: inline;
+}
+.img-responsive {
+    width: 100%;
+}
+ .caption-full {
+    padding: 9px;
+ }
+.row {
+    margin: 0;
+}
+.pad{
+    padding: 9px;
+}
+footer {
+    float: right;
+    position: relative;
+    bottom: 10px;
+    margin-right: 9px;
+}
+/* NEW CAMPGROUND & COMMENT */
+.new-head {
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+}
+.new-form {  
+    margin: 25px auto;
+}
