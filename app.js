@@ -51,6 +51,6 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(92.40.248.172, function () {
+app.listen(process.env.PORT, process.env.IP, function () {
 	console.log("Server has started...");
 });
