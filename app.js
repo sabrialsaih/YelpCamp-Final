@@ -16,8 +16,10 @@ var express          = require("express"),
 var commentRoutes    = require("./routes/comments"),
 	campgroundRoutes = require("./routes/campgrounds"),
 	indexRoutes      = require("./routes/index");
-//mongoose.connect("mongodb://localhost:27017/yelp_camp_v11"
-mongoose.connect("mongodb+srv://sabri:Gtx1060ti@cluster0-its4a.mongodb.net/test?retryWrites=true&w=majority", {
+
+
+ //mongoose.connect("mongodb://localhost:27017/yelp_camp_v11",{
+ mongoose.connect("mongodb+srv://sabri:sabri@newcluster-8ybyt.mongodb.net/test?retryWrites=true&w=majority", {
 	useUnifiedTopology: true,
 	useNewUrlParser: true});
  
@@ -51,17 +53,7 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://sabrixuchiha%40gmail%2Ecom:Gtx1060ti@cluster0-its4a.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-	const collection = client.db("test").collection("devices");
-	// perform actions on the collection object
-	client.close();
-});
-
-console.log(process.env.PORT, process.env.IP);
-app.listen(27017, function () {
+//console.log(process.env.PORT, process.env.IP);
+app.listen(process.env.PORT, process.env.IP, function () {
 	console.log("Server has started...");
 });
